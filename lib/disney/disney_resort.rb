@@ -3,11 +3,23 @@ module ParkInfo
         RESORT_ID = nil
         PARK_ID = nil
 
-        include ParkInfo::Bag
+        include ParkInfo::ActAsBag
 
         def wait_times
-            url = "facility-service/theme-parks/#{park_id};destination=#{resort_id}/wait-times"
-            @raw = get(url)
+            if wait_times_timed_out
+                url = "facility-service/theme-parks/#{park_id};destination=#{resort_id}/wait-times"
+                @data = get(url)
+                @wait_times_timeout = Time.now + CACHE_TIMEOUT
+            end
+            @data
+        end
+
+        def attractions
+            if wait_times_timed_out
+                wait_times
+                @attractions = ParkInfo::DisneyAttraction.process @data['entries']
+            end
+            @attractions
         end
 
         def facilities_info
@@ -24,6 +36,12 @@ module ParkInfo
 
         def region
             self.class::REGION
+        end
+
+        protected
+
+        def wait_times_timed_out
+            @wait_times_timeout.nil? || Time.now > @wait_times_timeout
         end
     end
 end

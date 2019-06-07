@@ -7,6 +7,9 @@ module ParkInfo
 
         REGION = nil
 
+        # How long to keep cached data, in seconds
+        CACHE_TIMEOUT = 5 * 60 # 5 minutes
+
         def get_auth_token
             resp = RestClient.post(TOKEN_URL, TOKEN_BODY)
             data = JSON.parse(resp)
