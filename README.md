@@ -10,7 +10,7 @@ Currently, it is only handling Disney parks, but I plan to add others quickly.
 ## Usage
 
 ```
-> require './lib/park_info.rb'
+> require 'park_info'
  => true
  
 > mk = ParkInfo::DisneyWorld::MagicKingdom.new
