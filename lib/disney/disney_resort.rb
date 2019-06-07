@@ -7,8 +7,7 @@ module ParkInfo
 
         def wait_times
             if wait_times_timed_out
-                url = "facility-service/theme-parks/#{park_id};destination=#{resort_id}/wait-times"
-                @data = get(url)
+                @data = get(wait_times_url)
                 @wait_times_timeout = Time.now + CACHE_TIMEOUT
             end
             @data
@@ -22,8 +21,12 @@ module ParkInfo
             @attractions
         end
 
-        def facilities_info
-            url = "mobile-service/public/destinations/#{resort_id};entityType=destination/facilities?region=#{region}"
+        def wait_times_url
+             "facility-service/theme-parks/#{park_id};destination=#{resort_id}/wait-times"
+        end
+
+        def facilities_info_url
+            "mobile-service/public/destinations/#{resort_id};entityType=destination/facilities?region=#{region}"
         end
 
         def resort_id

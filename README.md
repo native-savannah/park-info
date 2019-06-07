@@ -41,3 +41,7 @@ Currently, the data is cached locally for 5 minutes.
   - Hollywood Studios (`ParkInfo::DisneyWorld::HollywoodStudios`)
   - Magic Kingdom (`ParkInfo::DisneyWorld:MagicKingdom`)
 
+* Disneyland
+  - California Adventure (`ParkInfo::Disneyland::CaliforniaAdventure`)
+  - Disneyland Park (`ParkInfo::Disneyland::DisneylandPark`)
+
