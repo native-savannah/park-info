@@ -22,7 +22,7 @@ module ParkInfo
         end
 
         def wait_times_url
-             "facility-service/theme-parks/#{park_id};destination=#{resort_id}/wait-times"
+             "facility-service/theme-parks/#{park_id};destination=#{resort_id}/wait-times?region=#{region}"
         end
 
         def facilities_info_url

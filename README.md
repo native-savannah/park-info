@@ -45,3 +45,7 @@ Currently, the data is cached locally for 5 minutes.
   - California Adventure (`ParkInfo::Disneyland::CaliforniaAdventure`)
   - Disneyland Park (`ParkInfo::Disneyland::DisneylandPark`)
 
+* Disneyland Paris
+  - Disneyland Park (`ParkInfo::DisneylandParis::DisneylandPark`)
+  - Walt Disney Studios (`ParkInfo::DisneylandParis::WaltDisneyStudios`)
+
