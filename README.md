@@ -49,6 +49,6 @@ Currently, the data is cached locally for 5 minutes.
   - Disneyland Park (`ParkInfo::DisneylandParis::DisneylandPark`)
   - Walt Disney Studios (`ParkInfo::DisneylandParis::WaltDisneyStudios`)
 
- Hong Kong Disneyland
+* Hong Kong Disneyland
   - Disneyland Park (`ParkInfo::HongKongDisneyland::DisneylandPark`)
 
