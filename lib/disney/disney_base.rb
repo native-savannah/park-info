@@ -27,7 +27,6 @@ module ParkInfo
                 'content_type' => 'json'
             }
             url = BASE_URL + url_pattern
-            p url
             data['region'] = region
 
             resp = RestClient::Request.execute(method: :get, url: url, payload: data.to_json, headers: headers)
