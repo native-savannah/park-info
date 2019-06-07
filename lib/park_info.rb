@@ -1,10 +1,11 @@
 require 'json'
 require 'rest-client'
 
+require File.dirname(__FILE__) + '/version'
+
 module ParkInfo
     module ActAsBag
         def method_missing(method_name, *args, &block)
-            p method_name.to_s
             if @data && @data.has_key?(method_name.to_s)
                 @data[method_name.to_s]
             else
